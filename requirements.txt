@@ -4,3 +4,4 @@ numpy==1.26.0
 plotly==6.1.2
 scikit-learn==1.5.2
 matplotlib==3.9.0
+openpyxl>=3.1
