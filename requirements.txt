@@ -1,8 +1,6 @@
 streamlit==1.45.1
 pandas==2.2.2
 numpy==1.26.0
+plotly==6.1.2
 scikit-learn==1.5.2
 matplotlib==3.9.0
-lxml==5.2.2
-pyarrow==20.0.0
-yfinance==0.2.41
