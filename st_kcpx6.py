@@ -943,7 +943,7 @@ st.session_state.selected_model = selected_model
 
 st.sidebar.markdown("---")
 st.sidebar.write("Developed with ❤️ using Streamlit")
-
+st.sidebar.write("EnConLab ,KMUTT")
 
 # --- Main Content Area ---
 
