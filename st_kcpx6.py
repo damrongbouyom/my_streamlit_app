@@ -950,8 +950,7 @@ st.sidebar.write("Developed with ❤️ using Streamlit")
 # --- NEW SECTION: About This App & Methodology ---
 with st.expander("About This App & Methodology", expanded=True):
     st.markdown("""
-    แอพลิเคชั่นนี้ช่วยวิเคราะห์ข้อมูลการทำงานของเครื่องทำนำ้เย็น ว่าเครื่องทำงานต่างจากสเปคไปหรือยัง และในปัจจุบันยังทำงานปกติหรื่อไม่ การระบายความร้อนปกติหรือไม่ 
-    This application provides a tool for analyzing the performance of chiller systems. Users can input chiller specifications and operational data to gain insights into efficiency, identify potential anomalies, and benchmark performance using different analytical models.
+    แอพลิเคชั่นนี้ช่วยวิเคราะห์ข้อมูลการทำงานของเครื่องทำนำ้เย็น ว่าเครื่องทำงานต่างจากสเปคหรือไม่ และในปัจจุบันยังทำงานปกติหรื่อไม่ การระบายความร้อนปกติหรือไม่ โดยใช้โมเดลด้านข้อมูลในการวิเคราะห์ สามารถกรอกข้อมูลหรือโหลดจาก Excel file
 
     **Key Capabilities:**
     * อ่านข้อมูล Logsheet และเปรียบเทียบกับสเปคว่าทำงานปกติหรือไม่ (rated capacity, rated power, IPLV).
