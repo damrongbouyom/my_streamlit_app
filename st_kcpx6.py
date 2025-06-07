@@ -1252,7 +1252,7 @@ with col3:
 
 st.markdown("---")
 st.header("4.Execute Model")
-
+st.write("พร้อมรันโมเดลที่คุณเลือก")
 if st.button("Execute Model", key="execute_model_btn", help="Run the selected model with the current data."):
     if not st.session_state.chspec:
         st.warning("Please define chiller specifications (Section 1) and 'Confirm Specs' before executing the model.")
