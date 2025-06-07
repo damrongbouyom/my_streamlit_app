@@ -950,8 +950,7 @@ st.sidebar.write("Developed with ❤️ using Streamlit")
 # --- NEW SECTION: About This App & Methodology ---
 with st.expander("About This App & Methodology", expanded=True):
     st.markdown("""
-    แอพลิเคชั่นนี้ช่วยวิเคราะห์ข้อมูลการทำงานของเครื่องทำนำ้เย็น ว่าเครื่องทำงานต่างจากสเปคไปหรือยัง และในปัจจุบันยังทำงานปกติหรื่อไม่ การระบายความร้อนปกติหรือไม่ โดยเราต้องป้อนข้อมูลได้ทั้งแบบกรอกและ โหลด Logsheet ๅ วันทำงานเป็นอย่างน้อย
-    
+    แอพลิเคชั่นนี้ช่วยวิเคราะห์ข้อมูลการทำงานของเครื่องทำนำ้เย็น ว่าเครื่องทำงานต่างจากสเปคไปหรือยัง และในปัจจุบันยังทำงานปกติหรื่อไม่ การระบายความร้อนปกติหรือไม่ 
     This application provides a tool for analyzing the performance of chiller systems. Users can input chiller specifications and operational data to gain insights into efficiency, identify potential anomalies, and benchmark performance using different analytical models.
 
     **Key Capabilities:**
@@ -964,7 +963,6 @@ with st.expander("About This App & Methodology", expanded=True):
     * Export all input and generated data for further use.
 
     **Methodology & Key Calculations:**
-    The application performs several critical calculations to derive chiller performance metrics:
     * **Compare kW/ton of models and actual operation
     * **Check Anomaly data
     * **Check Cooling Tower efficiency
@@ -978,9 +976,9 @@ with st.expander("About This App & Methodology", expanded=True):
         ตรวจหาค่าที่ผิดปกติด้วย Isolation Forest Model และแจ้งว่าเกิดที่ข้อมูลเวลาใด
                 
     **Important Considerations:**
-    * The models currently implemented are **placeholders** to demonstrate functionality. Actual production-ready models would require extensive training on diverse and high-quality datasets specific to your chillers.
-    * The accuracy of the analysis heavily relies on the quality, accuracy, and completeness of the input operational data.
-    * Anomaly detection thresholds and rules are illustrative and should be fine-tuned based on specific system characteristics, operational tolerances, and expert knowledge.
+    * ความถูกต้องของผลวิเคราะห์ขึ้นกับคุณภาพของข้อมูล
+    * การปรับตั้งการทำงานของระบบต้องดำเนินการโดยผู้ควบคุมที่มีความรู้ความเข้าใจ
+    * การประเมินว่าข้อมูลผิดปกติ (Anomaly detection) ใช้เกณฑ์ตรวจจับค่าที่เบี่ยงเบนเกิน 10% 
     """)
 
 # --- NEW SECTION: Load Previously Saved Data ---
