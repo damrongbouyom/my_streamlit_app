@@ -1649,7 +1649,7 @@ if st.session_state.model_output:
         
         difkwpt =100* (float(lkwpt[0])-lrkwpt)/lrkwpt
         difiplv= 100*(float(liplv[0])-lriplv)/ lriplv
-        if difkwpt> 10:
+         if difkwpt> 10 or difkwpt < -10 :
             str8=str8+f" เครื่องทำนำ้เย็น {key} ค่าสมรรถนะที่ full load ที่ประเมินสูงกว่าสเปคมาก (diff  {difkwpt:.2f} %) ควรตรวจสอบ" 
             chkwpt_nok.append(key)
         elif difkwpt>5:
@@ -1659,13 +1659,16 @@ if st.session_state.model_output:
         else:
             str8=str8+f" เครื่องทำนำ้เย็น {key} ค่าสมรรถนะที่ full load ที่ประเมินตำ่กว่าสเปค (diff  {difkwpt:.2f} %) อาจตรวจสอบ" 
         
-        if difiplv> 10:
+        if difiplv> 10 or difiplv< -10:
             str9=str9+f" เครื่องทำนำ้เย็น {key} ค่า IPLV ที่ประเมินสูงกว่าสเปคพอสมควร (diff  {difkwpt:.2f} %) " 
             chiplv_nok.append(key)
-        else:
+        else :
             str9=str9+f" เครื่องทำนำ้เย็น {key} ค่า IPLV ที่ประเมินใกล้เคียงสเปค (diff  {difkwpt:.2f} %) " 
-    str8=str8+f" เครื่องทำนำ้เย็นที่มีค่า สมรรถนะแตกต่างเกิน 10% ได้แก่ {chkwpt_nok}"
-    str9=str9+f" เครื่องทำนำ้เย็นที่มีค่า IPLV แตกต่างเกิน 10% ได้แก่ {chkwpt_nok}"
+
+    if len(chkwpt_nok) >0:
+        str8=str8+f" เครื่องทำนำ้เย็นที่มีค่า สมรรถนะแตกต่างเกิน 10% ได้แก่ {chkwpt_nok}"
+    if len(chiplv_nok) >0:
+        str9=str9+f" เครื่องทำนำ้เย็นที่มีค่า IPLV แตกต่างเกิน 10% ได้แก่ {chkwpt_nok}"
     st.write(str8)
     st.write(str9)
 
