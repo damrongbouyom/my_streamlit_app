@@ -1649,7 +1649,7 @@ if st.session_state.model_output:
         
         difkwpt =100* (float(lkwpt[0])-lrkwpt)/lrkwpt
         difiplv= 100*(float(liplv[0])-lriplv)/ lriplv
-         if difkwpt> 10 or difkwpt < -10 :
+        if difkwpt> 10 or difkwpt < -10 :
             str8=str8+f" เครื่องทำนำ้เย็น {key} ค่าสมรรถนะที่ full load ที่ประเมินสูงกว่าสเปคมาก (diff  {difkwpt:.2f} %) ควรตรวจสอบ" 
             chkwpt_nok.append(key)
         elif difkwpt>5:
