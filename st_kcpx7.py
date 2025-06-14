@@ -1728,10 +1728,10 @@ if st.session_state.model_output:
             str8=str8+f" เครื่องทำนำ้เย็น {key} ค่าสมรรถนะที่ full load ที่ประเมินตำ่กว่าสเปค (diff  {difkwpt:.2f} %) อาจตรวจสอบ" 
         
         if difiplv> 10 or difiplv< -10:
-            str9=str9+f" เครื่องทำนำ้เย็น {key} ค่า IPLV ที่ประเมินสูงกว่าสเปคพอสมควร (diff  {difkwpt:.2f} %) " 
+            str9=str9+f" เครื่องทำนำ้เย็น {key} ค่า IPLV ที่ประเมินสูงกว่าสเปคพอสมควร (diff  {difiplv:.2f} %) " 
             chiplv_nok.append(key)
         else :
-            str9=str9+f" เครื่องทำนำ้เย็น {key} ค่า IPLV ที่ประเมินใกล้เคียงสเปค (diff  {difkwpt:.2f} %) " 
+            str9=str9+f" เครื่องทำนำ้เย็น {key} ค่า IPLV ที่ประเมินใกล้เคียงสเปค (diff  {difiplv:.2f} %) " 
 
     if len(chkwpt_nok) >0:
         str8=str8+f" เครื่องทำนำ้เย็นที่มีค่า สมรรถนะแตกต่างเกิน 10% ได้แก่ {chkwpt_nok}"
