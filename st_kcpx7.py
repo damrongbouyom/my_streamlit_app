@@ -1166,8 +1166,8 @@ with st.expander("Click the button below to download the Excel template file.", 
     """, unsafe_allow_html=True)
 
 # --- NEW SECTION: Load Previously Saved Data ---
-st.header("Load Previously Saved Data")
-st.info("โหลดไฟล์ข้อมูลที่บันทึกข้อมูลสเปค (data0) ข้อมูลการทำงานที่ผ่านมา (data1) และข้อมูลการใช้งานปัจจุบันที่ต้องการตรวจสอบ (data2)")
+st.header("Load Previously Saved Data (Shortcut)")
+st.info("โหลดไฟล์ข้อมูลที่บันทึกข้อมูลสเปค (data0) ข้อมูลการทำงานที่ผ่านมา (data1) และข้อมูลการใช้งานปัจจุบันที่ต้องการตรวจสอบ (data2) จากไฟล์ Template หนเดียว ไม่ต้องป้อนทีละข้อ โหลดแล้วไปรันโมเดลข้อ 4 ได้เลย")
 with st.form("load_saved_data_form"):
     uploaded_saved_file = st.file_uploader(
         "Upload your 'output_chiller_data.xlsx' or a similar saved Excel file",
@@ -1180,7 +1180,7 @@ with st.form("load_saved_data_form"):
         if uploaded_saved_file is not None:
             # Call the new helper function to load all data
             st.session_state.chspec, st.session_state.data1, st.session_state.data3 = load_all_from_output_excel(uploaded_saved_file)
-            st.success("All data (Chiller Specs, Historical, Current) has been loaded from your file!")
+            st.success("All data (Chiller Specs, Historical, Current) has been loaded from your file! Goto No.4 to execute Models.")
             # Optional: st.rerun() to immediately update the UI, though often not strictly necessary if data is used in subsequent forms
             st.rerun()
         else:
