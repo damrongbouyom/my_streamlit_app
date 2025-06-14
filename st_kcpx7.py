@@ -1097,7 +1097,7 @@ with st.expander("About This App & Methodology", expanded=True):
     * การประเมินว่าข้อมูลผิดปกติ (Anomaly detection) ใช้เกณฑ์ตรวจจับค่าที่เบี่ยงเบนเกิน 10% 
     """)
 
-st.header("Download Excel Template")
+st.header("Download Excel Template (option)")
 with st.expander("Click the button below to download the Excel template file.", expanded=False):
     st.write("หากใช้งานในครั้งแรก และต้องการป้อนข้อมูลด้วยไฟล์ Excel แต่ไม่มีไฟล์ หรืออยากทดสอบการใช้งาน โหลดไฟล์ตัวอย่างตรงนี้ไปใช้ได้ โดยนำไปกรอกเป็นข้อมูลของท่าน แล้วโหลดไฟล์นี้เข้าระบบในหัวข้อถัดไป")
     # --- Replace with your actual GitHub raw URL ---
@@ -1167,7 +1167,7 @@ with st.expander("Click the button below to download the Excel template file.", 
 
 # --- NEW SECTION: Load Previously Saved Data ---
 st.header("Load Previously Saved Data")
-st.info("If you have previously saved your chiller specifications and operational data using this app (output_chiller_data.xlsx), you can upload that file here to quickly restore your session.")
+st.info("โหลดไฟล์ข้อมูลที่บันทึกข้อมูลสเปค (data0) ข้อมูลการทำงานที่ผ่านมา (data1) และข้อมูลการใช้งานปัจจุบันที่ต้องการตรวจสอบ (data2)")
 with st.form("load_saved_data_form"):
     uploaded_saved_file = st.file_uploader(
         "Upload your 'output_chiller_data.xlsx' or a similar saved Excel file",
