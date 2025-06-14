@@ -333,10 +333,10 @@ def run_random_forest_model(chspec, historical_data, current_data):
                 cap=items['cap']
                 rkw=items['rkw']
                 rkwpton=rkw/cap
-        input_values_4q = [cap, 7, 11, 31, 27, 2.4*cap]
-        input_values_3q = [0.75*cap, 7, 11, 31, 27, 2.4*cap]
-        input_values_2q = [0.5*cap, 7, 11, 31, 27, 2.4*cap]   
-        input_values_1q = [0.25*cap, 7, 11, 31, 27, 2.4*cap]
+        input_values_4q = [cap, 6.7, 12.25, 34.95, 29.4, 2.4*cap]
+        input_values_3q = [0.75*cap, 6.7, 10.86, 28.06, 23.9, 2.4*cap]
+        input_values_2q = [0.5*cap, 6.7, 9.47, 21.07, 18.3, 2.4*cap]   
+        input_values_1q = [0.25*cap, 6.7, 8.08, 19.68, 18.3, 2.4*cap]
         input_df_4q = pd.DataFrame([input_values_4q], columns=feature_cols)
         input_df_3q = pd.DataFrame([input_values_3q], columns=feature_cols)
         input_df_2q = pd.DataFrame([input_values_2q], columns=feature_cols)
@@ -356,7 +356,7 @@ def run_random_forest_model(chspec, historical_data, current_data):
         kwpt2=predicted_kW2/(0.5*cap)
         kwpt3=predicted_kW3/(0.75*cap)
         kwpt4=predicted_kW4/(cap)
-        iplv_value= 0.11*kwpt1+0.4*kwpt2+.23*kwpt3+0.25*kwpt4
+        iplv_value= 0.12*kwpt1+0.45*kwpt2+0.42*kwpt3+0.01*kwpt4
         diff1= 100*(kwpt4-rkwpton)/rkwpton
         diff2= 100*(iplv_value-iplv)/iplv
         results["kpi"][chiller_name] = {
@@ -646,10 +646,10 @@ def run_gordon_ng_model(chspec, historical_data, current_data):
                 cap=items['cap']
                 rkw=items['rkw']
                 rkwpton=rkw/cap
-        input_values_4q = [cap, 11, 31, 2.4*cap,100]
-        input_values_3q = [0.75*cap, 11, 31, 2.4*cap,100]
-        input_values_2q = [0.5*cap,11, 31, 2.4*cap,100]   
-        input_values_1q = [0.25*cap, 11, 31, 2.4*cap,100]
+        input_values_4q = [cap, 6.7, 12.25, 34.95, 29.4, 2.4*cap]
+        input_values_3q = [0.75*cap, 6.7, 10.86, 28.06, 23.9, 2.4*cap]
+        input_values_2q = [0.5*cap, 6.7, 9.47, 21.07, 18.3, 2.4*cap]   
+        input_values_1q = [0.25*cap, 6.7, 8.08, 19.68, 18.3, 2.4*cap]
 
         df_4q = pd.DataFrame([input_values_4q], columns=gn_feature_cols)
         df_3q = pd.DataFrame([input_values_3q], columns=gn_feature_cols)
@@ -678,7 +678,7 @@ def run_gordon_ng_model(chspec, historical_data, current_data):
         kwpt2=predicted_kW2/(0.5*cap)
         kwpt3=predicted_kW3/(0.75*cap)
         kwpt4=predicted_kW4/(cap)
-        iplv_value= 0.11*kwpt1+0.4*kwpt2+.23*kwpt3+0.25*kwpt4
+        iplv_value= 0.12*kwpt1+0.45*kwpt2+0.42*kwpt3+0.01*kwpt4
         diff1= 100*(kwpt4-rkwpton)/rkwpton
         diff2= 100*(iplv_value-iplv)/iplv
         results["kpi"][chiller_name] = {
