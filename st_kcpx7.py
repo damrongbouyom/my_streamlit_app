@@ -1097,6 +1097,74 @@ with st.expander("About This App & Methodology", expanded=True):
     * การประเมินว่าข้อมูลผิดปกติ (Anomaly detection) ใช้เกณฑ์ตรวจจับค่าที่เบี่ยงเบนเกิน 10% 
     """)
 
+st.header("Download Excel Template")
+with st.expander("Click the button below to download the Excel template file.", expanded=False):
+    st.write("หากใช้งานในครั้งแรก และต้องการป้อนข้อมูลด้วยไฟล์ Excel แต่ไม่มีไฟล์ หรืออยากทดสอบการใช้งาน โหลดไฟล์ตัวอย่างตรงนี้ไปใช้ได้ โดยนำไปกรอกเป็นข้อมูลของท่าน แล้วโหลดไฟล์นี้เข้าระบบในหัวข้อถัดไป")
+    # --- Replace with your actual GitHub raw URL ---
+    # Example: "https://raw.githubusercontent.com/myuser/myproject/main/template.xlsx"
+    github_template_url = "https://raw.githubusercontent.com/damrongbouyom/my_streamlit_app/main/template01.xlsx"
+
+
+    # --- Custom CSS for a consistent button style ---
+    st.markdown("""
+    <style>
+    .download-button-container {
+        background-color:white;
+        text-align: left; /* Center the button if desired */
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
+    .download-button {
+    
+        color: black !important; /* Ensures text color is white, !important overrides Streamlit's default link style */
+        padding: 5px 5px;
+        text-align: center;
+        text-decoration: none; /* Remove underline from link */
+        display: inline-block;
+        font-size: 16px;
+        margin: 5px 5px;
+        cursor: pointer;
+        border: solid;
+        border-width: 1px;
+        border-color: red;
+        border-radius: 5px;
+        transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover effects */
+    }
+
+    .download-button:hover {
+        background-color: white;              /*#45a049; /* Slightly darker green on hover */
+        font-color:red;
+        transform: translateY(-2px); /* Slight lift effect */
+    }
+
+    /* If you have other buttons, you can define a general .app-button style */
+    /* For instance:
+    .app-button {
+        background-color: #007bff;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+        display: inline-block;
+        cursor: pointer;
+        border: none;
+    }
+    */
+    </style>
+    """, unsafe_allow_html=True)
+
+
+    st.markdown(f"""
+    <div class="download-button-container">
+        <a href="{github_template_url}" download="template.xlsx">
+            <button class="download-button">
+                Download Excel Template
+            </button>
+        </a>
+    </div>
+    """, unsafe_allow_html=True)
+
 # --- NEW SECTION: Load Previously Saved Data ---
 st.header("Load Previously Saved Data")
 st.info("If you have previously saved your chiller specifications and operational data using this app (output_chiller_data.xlsx), you can upload that file here to quickly restore your session.")
